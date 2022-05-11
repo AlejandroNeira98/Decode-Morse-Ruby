@@ -4,22 +4,22 @@ def decode_char(char)
 end
 
 def decode_word(word)
-  chars = word.split(' ')
+  chars = word.split
   result = ''
-  chars.each { |c|
+  chars.each do |c|
     result += decode_char(c)
-  }
-  return result
+  end
+  result
 end
 
 def decode(sentence)
   words = sentence.split('   ')
   result = ''
-  words.each { |word|
+  words.each do |word|
     result += decode_word(word)
     result += ' '
-  }
-  return result
+  end
+  result
 end
 
-puts decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
+puts decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
