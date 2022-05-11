@@ -22,7 +22,7 @@ $morse = {
   "..-" => "U",
   "...-" => "V",
   ".--" => "W",
-  "--..--" => "X",
+  "-..-" => "X",
   "-.--" => "Y",
   "--.." => "Z",
   ".----" => "1",
@@ -50,4 +50,15 @@ def decode_word(word)
   return result
 end
 
-print decode_word("-- -.--") 
+def decode(sentence)
+  words = sentence.split('   ')
+  result = ''
+  words.each { |word|
+    result += decode_word(word)
+    result += ' '
+  }
+  return result
+end
+
+puts decode("-- -.--   -. .- -- .") 
+puts decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
